@@ -3,5 +3,7 @@
 *
 !.gitignore
 !requirements.txt
+!LICENSE.odt
+!README.md
 !/src/
 !/src/core/
