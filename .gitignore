@@ -1,5 +1,5 @@
-# created by virtualenv automatically
-
+# Ignore the .idea directory
+.idea/
 *
 !.gitignore
 !requirements.txt
