@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """This module contains all modified/simplified widgets from PySide6
-It is made to be easier to use and to be consistant in terms of colors and sizes.
+It is made to be easier to use and to be consistent in terms of colors and sizes.
+
+If you want to modify the police and color of your application, try to change the following variables!
 
 @author: Aurèle Boussard
 """
@@ -82,77 +84,6 @@ class WindowType(QtWidgets.QWidget):
                 "background-color: %s; color: %s; font: %s; border-color: %s; selection-color: %s; selection-background-color: %s" % (
                 backgroundcolor, textColor, f"{textsize}pt {textfont};", bordercolor, selectioncolor,
                 selectionbackgroundcolor))
-
-
-# class FullScreenImage(QtWidgets.QLabel):
-#     def __init__(self, image, screen_height, screen_width):
-#         super().__init__()
-#         self.true_shape = image.shape
-#         self.max_height = screen_height
-#         self.max_width = screen_width
-#         self.im_size_policy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding,
-#                                                     QtWidgets.QSizePolicy.MinimumExpanding)
-#         self.setSizePolicy(self.im_size_policy)
-#
-#         height_width_ratio = image.shape[0] / image.shape[1]
-#         image = cvtColor(image, COLOR_BGR2RGB)
-#         image = QImage(image.data, image.shape[1], image.shape[0], 3 * image.shape[1], QImage.Format_RGB888)
-#         image = QPixmap(image)
-#         self.setScaledContents(True)
-#         if self.max_width * height_width_ratio < self.max_height:
-#             self.scaled_shape = [round(self.max_width * height_width_ratio), self.max_width]
-#         else:
-#             self.scaled_shape = [self.max_height, round(self.max_height / height_width_ratio)]
-#         self.setMinimumSize(self.scaled_shape[1], self.scaled_shape[0])
-#         self.setPixmap(QPixmap(image))
-#         self.adjustSize()
-#
-#
-# class InsertImage(QtWidgets.QLabel):
-#     def __init__(self, image, max_height, max_width):
-#         super().__init__()
-#         self.true_shape = image.shape
-#         self.max_height = max_height
-#         self.max_width = max_width
-#         self.im_size_policy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding,
-#                                                     QtWidgets.QSizePolicy.MinimumExpanding)
-#         self.setSizePolicy(self.im_size_policy)
-#
-#         height_width_ratio = image.shape[0] / image.shape[1]
-#         image = cvtColor(image, COLOR_BGR2RGB)
-#         image = QImage(image.data, image.shape[1], image.shape[0], 3 * image.shape[1], QImage.Format_RGB888)
-#         image = QPixmap(image)
-#         self.setScaledContents(True)
-#         if self.max_width * height_width_ratio < self.max_height:
-#             self.scaled_shape = [round(self.max_width * height_width_ratio), self.max_width]
-#         else:
-#             self.scaled_shape = [self.max_height, round(self.max_height / height_width_ratio)]
-#         self.setMaximumHeight(self.scaled_shape[0])
-#         self.setMaximumWidth(self.scaled_shape[1])
-#         self.setPixmap(QPixmap(image))
-#         self.adjustSize()
-#
-#
-#     def update_image(self, image, text=None, color=255):
-#         self.true_shape = image.shape
-#         height_width_ratio = image.shape[0] / image.shape[1]
-#         image = cvtColor(image, COLOR_BGR2RGB)
-#         image = QImage(image.data, image.shape[1], image.shape[0], 3 * image.shape[1], QImage.Format_RGB888)
-#         image = QPixmap(image)
-#         self.setScaledContents(True)
-#         if self.max_width * height_width_ratio < self.max_height:
-#             self.scaled_shape = [int(round(self.max_width * height_width_ratio)), self.max_width]
-#         else:
-#             self.scaled_shape = [self.max_height, int(round(self.max_height / height_width_ratio))]
-#         self.setMaximumHeight(self.scaled_shape[0])
-#         self.setMaximumWidth(self.scaled_shape[1])
-#
-#         if text is not None:
-#             pass
-#         self.setPixmap(QPixmap(image))
-#
-#     def update_image_scaling_factors(self):
-#         self.scaling_factors = (self.true_shape[0] / self.scaled_shape[0]), (self.true_shape[1] / self.scaled_shape[1])
 
 
 class PButton(QtWidgets.QPushButton):
@@ -357,3 +288,77 @@ class LineWidget(QtWidgets.QWidget):
         else:
             self.line.setStyleSheet("QFrame { background-color: rgb(0, 0, 0) }")
 
+
+""" If you want to add an image and modify it dynamically with the usage of your application, use and modify these: """
+
+
+# class InsertImage(QtWidgets.QLabel):
+#     def __init__(self, image, max_height, max_width):
+#         super().__init__()
+#         self.true_shape = image.shape
+#         self.max_height = max_height
+#         self.max_width = max_width
+#         self.im_size_policy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding,
+#                                                     QtWidgets.QSizePolicy.MinimumExpanding)
+#         self.setSizePolicy(self.im_size_policy)
+#
+#         height_width_ratio = image.shape[0] / image.shape[1]
+#         image = cvtColor(image, COLOR_BGR2RGB)
+#         image = QImage(image.data, image.shape[1], image.shape[0], 3 * image.shape[1], QImage.Format_RGB888)
+#         image = QPixmap(image)
+#         self.setScaledContents(True)
+#         if self.max_width * height_width_ratio < self.max_height:
+#             self.scaled_shape = [round(self.max_width * height_width_ratio), self.max_width]
+#         else:
+#             self.scaled_shape = [self.max_height, round(self.max_height / height_width_ratio)]
+#         self.setMaximumHeight(self.scaled_shape[0])
+#         self.setMaximumWidth(self.scaled_shape[1])
+#         self.setPixmap(QPixmap(image))
+#         self.adjustSize()
+#
+#
+#     def update_image(self, image, text=None, color=255):
+#         self.true_shape = image.shape
+#         height_width_ratio = image.shape[0] / image.shape[1]
+#         image = cvtColor(image, COLOR_BGR2RGB)
+#         image = QImage(image.data, image.shape[1], image.shape[0], 3 * image.shape[1], QImage.Format_RGB888)
+#         image = QPixmap(image)
+#         self.setScaledContents(True)
+#         if self.max_width * height_width_ratio < self.max_height:
+#             self.scaled_shape = [int(round(self.max_width * height_width_ratio)), self.max_width]
+#         else:
+#             self.scaled_shape = [self.max_height, int(round(self.max_height / height_width_ratio))]
+#         self.setMaximumHeight(self.scaled_shape[0])
+#         self.setMaximumWidth(self.scaled_shape[1])
+#
+#         if text is not None:
+#             pass
+#         self.setPixmap(QPixmap(image))
+#
+#     def update_image_scaling_factors(self):
+#         self.scaling_factors = (self.true_shape[0] / self.scaled_shape[0]), (self.true_shape[1] / self.scaled_shape[1])
+
+
+# class FullScreenImage(QtWidgets.QLabel):
+#     def __init__(self, image, screen_height, screen_width):
+#         super().__init__()
+#         self.true_shape = image.shape
+#         self.max_height = screen_height
+#         self.max_width = screen_width
+#         self.im_size_policy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding,
+#                                                     QtWidgets.QSizePolicy.MinimumExpanding)
+#         self.setSizePolicy(self.im_size_policy)
+#
+#         height_width_ratio = image.shape[0] / image.shape[1]
+#         image = cvtColor(image, COLOR_BGR2RGB)
+#         image = QImage(image.data, image.shape[1], image.shape[0], 3 * image.shape[1], QImage.Format_RGB888)
+#         image = QPixmap(image)
+#         self.setScaledContents(True)
+#         if self.max_width * height_width_ratio < self.max_height:
+#             self.scaled_shape = [round(self.max_width * height_width_ratio), self.max_width]
+#         else:
+#             self.scaled_shape = [self.max_height, round(self.max_height / height_width_ratio)]
+#         self.setMinimumSize(self.scaled_shape[1], self.scaled_shape[0])
+#         self.setPixmap(QPixmap(image))
+#         self.adjustSize()
+#

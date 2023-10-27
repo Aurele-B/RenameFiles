@@ -11,6 +11,7 @@ import shutil
 from pathlib import Path
 from core.custom_widgets import *
 
+
 class RenameFilesWidget(WindowType):
     """ This is the main widget of the RenameFiles application: the one that you will transform to create your own app.
 
@@ -46,8 +47,9 @@ class RenameFilesWidget(WindowType):
         """1. Initialize default parameters"""
         self.default_file_name = "IMG_"
         self.default_file_extension = ".jpg"
-        self.default_src_dir = Path("D:/Directory/Data/test/sub_test")
-        self.default_dest_dir = Path("D:/Directory/Data/test/")
+        self.default_src_dir = "C:/"
+        self.default_dest_dir = "C:/"
+        self.default_action_on_constant_chars = "Keep"
         self.default_remove_from_src = False
         self.existing_files = []
 
@@ -79,57 +81,31 @@ class RenameFilesWidget(WindowType):
         """
         # First horizontal layout:
         # a. Create an empty widget
-        self.file_name_widget = QtWidgets.QWidget()
-        # b. Create a QHBoxLayout
-        self.file_name_layout = QtWidgets.QHBoxLayout()
-        # c. Create one or several widgets that you want to add to that layout
-        self.file_name_label = FixedText('File name before numbering:', police=20, night_mode=night_mode)
-        self.file_name = EditText(self.default_file_name, night_mode)
-        # d. Add these widgets to the layout, with any required horizontal spaces
-        self.file_name_layout.addItem(self.horizontal_space)
-        self.file_name_layout.addWidget(self.file_name_label)
-        self.file_name_layout.addWidget(self.file_name)
-        self.file_name_layout.addItem(self.horizontal_space)
-        # e. Set the layout inside the empty widget
-        self.file_name_widget.setLayout(self.file_name_layout)
-        # f. Add this widget (contaning the horizontal layout) to the (larger) vertical layout
-        self.Vlayout.addWidget(self.file_name_widget)
-
-        # Second horizontal layout:
-        self.file_extension_widget = QtWidgets.QWidget()
-        self.file_extension_layout = QtWidgets.QHBoxLayout()
-        self.file_extension_label = FixedText('File extension:', police=20, night_mode=night_mode)
-        self.file_extension = EditText(self.default_file_extension, night_mode)
-        self.file_name_layout.addItem(self.horizontal_space)
-        self.file_extension_layout.addWidget(self.file_extension_label)
-        self.file_extension_layout.addWidget(self.file_extension)
-        self.file_extension_layout.addItem(self.horizontal_space)
-        self.file_extension_widget.setLayout(self.file_extension_layout)
-        self.Vlayout.addWidget(self.file_extension_widget)
-
-        # Third horizontal layout:
         self.src_widget = QtWidgets.QWidget()
+        # b. Create a QHBoxLayout
         self.src_layout = QtWidgets.QHBoxLayout()
+        # c. Create one or several widgets that you want to add to that layout
         self.src_path_label = FixedText('Source folder:', police=20, night_mode=night_mode)
         self.src_path = EditText(self.default_src_dir, night_mode)
         self.browse_src = PButton('Browse', night_mode)
-        self.browse_src.clicked.connect(self.browse_src_is_clicked)
-        self.src_layout.addItem(self.horizontal_space)
+        self.browse_src.clicked.connect(self.browse_src_is_clicked)  # Clicking the button triggers the function
+        # d. Add these widgets to the layout, with any required horizontal spaces
         self.src_layout.addWidget(self.src_path_label)
         self.src_layout.addWidget(self.src_path)
         self.src_layout.addWidget(self.browse_src)
         self.src_layout.addItem(self.horizontal_space)
+        # e. Set the layout inside the empty widget
         self.src_widget.setLayout(self.src_layout)
+        # f. Add this widget (contaning the horizontal layout) to the (larger) vertical layout
         self.Vlayout.addWidget(self.src_widget)
 
-        # Fourth horizontal layout:
+        # Second horizontal layout:
         self.dest_widget = QtWidgets.QWidget()
         self.dest_layout = QtWidgets.QHBoxLayout()
-        self.dest_path_label = FixedText('Destination folder:', police=20, night_mode=night_mode)
+        self.dest_path_label = FixedText('Target folder:', police=20, night_mode=night_mode)
         self.dest_path = EditText(self.default_dest_dir, night_mode)
         self.browse_dest = PButton('Browse', night_mode)
         self.browse_dest.clicked.connect(self.browse_dest_is_clicked)
-        self.dest_layout.addItem(self.horizontal_space)
         self.dest_layout.addWidget(self.dest_path_label)
         self.dest_layout.addWidget(self.dest_path)
         self.dest_layout.addWidget(self.browse_dest)
@@ -137,12 +113,62 @@ class RenameFilesWidget(WindowType):
         self.dest_widget.setLayout(self.dest_layout)
         self.Vlayout.addWidget(self.dest_widget)
 
+        # Third horizontal layout:
+        self.file_name_widget = QtWidgets.QWidget()
+        self.file_name_layout = QtWidgets.QHBoxLayout()
+        self.file_name_label = FixedText('Constant characters:', police=20, night_mode=night_mode)
+        self.file_name = EditText(self.default_file_name, night_mode)
+        self.file_name_layout.addWidget(self.file_name_label)
+        self.file_name_layout.addWidget(self.file_name)
+        self.file_name_layout.addItem(self.horizontal_space)
+        self.file_name_widget.setLayout(self.file_name_layout)
+        self.Vlayout.addWidget(self.file_name_widget)
+
+        # Fourth horizontal layout:
+        self.action_on_constant_chars_widget = QtWidgets.QWidget()
+        self.action_on_constant_chars_layout = QtWidgets.QHBoxLayout()
+        self.action_on_constant_chars_label = FixedText('Action on const chars:', police=20, night_mode=night_mode)
+        self.action_on_constant_chars = Combobox(["Keep", "Change", "Remove"], night_mode)
+        self.action_on_constant_chars.setCurrentText('Keep')
+        self.action_on_constant_chars.currentTextChanged.connect(self.action_on_constant_chars_changed)
+        self.action_on_constant_chars_layout.addWidget(self.action_on_constant_chars_label)
+        self.action_on_constant_chars_layout.addWidget(self.action_on_constant_chars)
+        self.action_on_constant_chars_layout.addItem(self.horizontal_space)
+        self.action_on_constant_chars_widget.setLayout(self.action_on_constant_chars_layout)
+        self.Vlayout.addWidget(self.action_on_constant_chars_widget)
+
+        # Fifth horizontal layout:
+        # As this layout is only useful when self.default_action_on_constant_chars == "Change",
+        # the last row of this paragraph set it invisible. It can become visible when
+        # the combobox: self.action_on_constant_chars changes to "Change"
+        self.new_file_name_widget = QtWidgets.QWidget()
+        self.new_file_name_layout = QtWidgets.QHBoxLayout()
+        self.new_file_name_label = FixedText('New constant characters:', police=20, night_mode=night_mode)
+        self.new_file_name = EditText("", night_mode)
+        self.new_file_name_layout.addWidget(self.new_file_name_label)
+        self.new_file_name_layout.addWidget(self.new_file_name)
+        self.new_file_name_layout.addItem(self.horizontal_space)
+        self.new_file_name_widget.setLayout(self.new_file_name_layout)
+        self.Vlayout.addWidget(self.new_file_name_widget)
+        self.new_file_name_widget.setVisible(False)
+
+        # Fourth horizontal layout:
+        self.file_extension_widget = QtWidgets.QWidget()
+        self.file_extension_layout = QtWidgets.QHBoxLayout()
+        self.file_extension_label = FixedText('File extension:', police=20, night_mode=night_mode)
+        self.file_extension = EditText(self.default_file_extension, night_mode)
+        self.file_extension_layout.addWidget(self.file_extension_label)
+        self.file_extension_layout.addWidget(self.file_extension)
+        self.file_extension_layout.addItem(self.horizontal_space)
+        self.file_extension_widget.setLayout(self.file_extension_layout)
+        self.Vlayout.addWidget(self.file_extension_widget)
+
         # Fifth horizontal layout:
         self.start_nb_widget = QtWidgets.QWidget()
         self.start_nb_layout = QtWidgets.QHBoxLayout()
-        self.start_nb_label = FixedText('Starting number:', police=20, night_mode=night_mode)
+        # If you want a tip to appear when the mouse stays 1 second on a text, use the tip parameter.
+        self.start_nb_label = FixedText('Starting number:', police=20, night_mode=night_mode, tip="When renaming files, the number to give to the first file.")
         self.start_nb = Spinbox(0, 1000000000, val=1)
-        self.start_nb_layout.addItem(self.horizontal_space)
         self.start_nb_layout.addWidget(self.start_nb_label)
         self.start_nb_layout.addWidget(self.start_nb)
         self.start_nb_layout.addItem(self.horizontal_space)
@@ -152,12 +178,11 @@ class RenameFilesWidget(WindowType):
         # Sixth horizontal layout:
         self.remove_from_src_widget = QtWidgets.QWidget()
         self.remove_from_src_layout = QtWidgets.QHBoxLayout()
-        self.remove_from_src_label = FixedText('Remove files from source:', police=20, night_mode=night_mode)
         self.remove_from_src = Checkbox(self.default_remove_from_src)
         self.remove_from_src.stateChanged.connect(self.default_remove_from_src_check)
-        self.remove_from_src_layout.addItem(self.horizontal_space)
-        self.remove_from_src_layout.addWidget(self.remove_from_src_label)
+        self.remove_from_src_label = FixedText('Remove files from source', police=20, night_mode=night_mode)
         self.remove_from_src_layout.addWidget(self.remove_from_src)
+        self.remove_from_src_layout.addWidget(self.remove_from_src_label)
         self.remove_from_src_layout.addItem(self.horizontal_space)
         self.remove_from_src_widget.setLayout(self.remove_from_src_layout)
         self.Vlayout.addWidget(self.remove_from_src_widget)
@@ -187,17 +212,24 @@ class RenameFilesWidget(WindowType):
         """This method is connected to the browse_src push button
         Each time this button is clicked, this method open a file dialog window allowing to chose a directory"""
         dialog = QtWidgets.QFileDialog()
-        dialog.setDirectory(src_dir)
-        src_dir = dialog.getExistingDirectory(self, 'Select the folder where the files are')
-        self.src_path.setText(src_dir)
+        dialog.setDirectory(self.default_src_dir)
+        self.default_src_dir = dialog.getExistingDirectory(self, 'Select the folder where the files are')
+        self.src_path.setText(self.default_src_dir)
 
     def browse_dest_is_clicked(self):
         """This method is connected to the browse_dest push button
         Each time this button is clicked, this method open a file dialog window allowing to chose a directory"""
         dialog = QtWidgets.QFileDialog()
-        dialog.setDirectory(dest_dir)
-        dest_dir = dialog.getExistingDirectory(self, 'Select where to put file')
-        self.dest_path.setText(dest_dir)
+        dialog.setDirectory(self.default_dest_dir)
+        self.default_dest_dir = dialog.getExistingDirectory(self, 'Select where to put file')
+        self.dest_path.setText(self.default_dest_dir)
+
+    def action_on_constant_chars_changed(self):
+        """This method is connected to the action_on_constant_chars combobox
+        Each time the status of this combobox change, these lines are run"""
+        self.default_action_on_constant_chars = self.action_on_constant_chars.currentText()
+        if self.default_action_on_constant_chars == "Change":
+            self.new_file_name_widget.setVisible(True)
 
     def default_remove_from_src_check(self):
         """This method is connected to the default_remove_from_src checkbox
@@ -238,9 +270,15 @@ class RenameFilesWidget(WindowType):
             name_length = max((len(self.existing_files[0]), len(self.existing_files[-1])))
             digit_number = name_length - len(self.file_name.text()) - len(self.file_extension.text())
             radical_length = name_length - digit_number - len(self.file_extension.text())
-            radical = self.existing_files[0][:radical_length]
+            if self.action_on_constant_chars.currentText() == "Keep":
+                radical = self.existing_files[0][:radical_length]
+            elif self.action_on_constant_chars.currentText() == "Change":
+                radical = self.new_file_name.text()
+            elif self.action_on_constant_chars.currentText() == "Remove":
+                radical = ""
+
             for file_i in range(len(self.existing_files)):
-                new_name =  radical + str(file_i + int(self.start_nb.value())).rjust(digit_number, "0") + self.file_extension.text()
+                new_name = radical + str(file_i + int(self.start_nb.value())).rjust(digit_number, "0") + self.file_extension.text()
                 dest_name = Path(self.dest_path.text()) / new_name
                 if self.remove_from_src.isChecked():
                     os.rename(self.existing_files[file_i], dest_name)
