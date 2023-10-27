@@ -11,6 +11,9 @@ The src folder contains 3 .py files:
 2. core/custom_widgets.py
 3. core/rename_files.py
 
+To download this content, use Code and Download ZIP:
+![alt text](https://github.com/Aurele-B/RenameFiles/How_to_download_from_github.jpg?raw=true)
+
 To create your first GUI, put these in a new python project and install the required package (next section).
 
 ## Package requirements
