@@ -13,7 +13,7 @@ The src folder contains 3 .py files:
 
 To download this content, use Code and Download ZIP:
 <img
-  src="https://github.com/Aurele-B/RenameFiles/How_to_download_from_github.jpg"
+  src="https://github.com/Aurele-B/RenameFiles/blob/main/How_to_download_from_github.jpg"
   alt="Alt text"
   title="Watch were to click"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
