@@ -77,8 +77,11 @@ class RenameFilesWidget(WindowType):
         e. Set the layout inside the empty widget
         f. Add this widget (contaning the horizontal layout) to the (larger) vertical layout
         
-        --> the following is only a repetition of each of these steps
+        --> the following is only a repetition of each of these steps. 
+        You can delete any of the nine following paragraphs. 
+        Do not forget to also delete the methods (small function definitions below) their widgets are connected to.
         """
+
         # First horizontal layout:
         # a. Create an empty widget
         self.src_widget = QtWidgets.QWidget()
@@ -152,7 +155,7 @@ class RenameFilesWidget(WindowType):
         self.Vlayout.addWidget(self.new_file_name_widget)
         self.new_file_name_widget.setVisible(False)
 
-        # Fourth horizontal layout:
+        # Sixth horizontal layout:
         self.file_extension_widget = QtWidgets.QWidget()
         self.file_extension_layout = QtWidgets.QHBoxLayout()
         self.file_extension_label = FixedText('File extension:', police=20, night_mode=night_mode)
@@ -163,7 +166,7 @@ class RenameFilesWidget(WindowType):
         self.file_extension_widget.setLayout(self.file_extension_layout)
         self.Vlayout.addWidget(self.file_extension_widget)
 
-        # Fifth horizontal layout:
+        # Seventh horizontal layout:
         self.start_nb_widget = QtWidgets.QWidget()
         self.start_nb_layout = QtWidgets.QHBoxLayout()
         # If you want a tip to appear when the mouse stays 1 second on a text, use the tip parameter.
@@ -175,7 +178,7 @@ class RenameFilesWidget(WindowType):
         self.start_nb_widget.setLayout(self.start_nb_layout)
         self.Vlayout.addWidget(self.start_nb_widget)
 
-        # Sixth horizontal layout:
+        # Eighth horizontal layout:
         self.remove_from_src_widget = QtWidgets.QWidget()
         self.remove_from_src_layout = QtWidgets.QHBoxLayout()
         self.remove_from_src = Checkbox(self.default_remove_from_src)
@@ -187,7 +190,7 @@ class RenameFilesWidget(WindowType):
         self.remove_from_src_widget.setLayout(self.remove_from_src_layout)
         self.Vlayout.addWidget(self.remove_from_src_widget)
 
-        # Seventh horizontal layout:
+        # Ninth horizontal layout:
         self.run_widget = QtWidgets.QWidget()
         self.run_layout = QtWidgets.QHBoxLayout()
         self.check_run = PButton('Check', night_mode)
@@ -204,8 +207,10 @@ class RenameFilesWidget(WindowType):
         self.run_widget.setLayout(self.run_layout)
         self.Vlayout.addWidget(self.run_widget)
 
+
         self.Vlayout.addItem(self.vertical_space)
-        """As for horizontal layouts, never forget to set the vertical layout in the current widget, i.e. self"""
+        """NEVER DELETE THIS LINE
+         As for horizontal layouts, never forget to set the vertical layout in the current widget, i.e. self"""
         self.setLayout(self.Vlayout)
 
     def browse_src_is_clicked(self):

@@ -35,4 +35,15 @@ If you want to modify it to create your own application, start by slightly modif
 3. core/rename_files.py
 
 For instance, you can start by modifying the title, then a push button, then the method linked to that push button...
-Enjoy!
+
+To do so, you will modify the "complete_widget" method of "RenameFilesWidget" class. 
+This method has 9 paragraph, each corresponding to a row in the window when the application runs.
+You can safely delete/modify these paragraph to understand how they work and make your own application.
+Deleting them quickly is good to simplify your code, 
+but keep their usage somewhere so that you can learn how to use the widget(s) they contain. These widgets are:
+- Text: fixed text in the app
+- Text to edit: modifiable text
+- Push button: a button linked to an action coded in a particular method (function) in the "RenameFilesWidget" class.
+- Combo box: select from a list of options
+- Spin box: select a number
+- Check box: check or uncheck a condition
