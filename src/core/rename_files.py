@@ -233,8 +233,8 @@ class RenameFilesWidget(WindowType):
         """This method is connected to the action_on_constant_chars combobox
         Each time the status of this combobox change, these lines are run"""
         self.default_action_on_constant_chars = self.action_on_constant_chars.currentText()
-        if self.default_action_on_constant_chars == "Change":
-            self.new_file_name_widget.setVisible(True)
+        # Set visible, only when action_on_constant_chars is "Change"
+        self.new_file_name_widget.setVisible(self.default_action_on_constant_chars == "Change")
 
     def default_remove_from_src_check(self):
         """This method is connected to the default_remove_from_src checkbox
