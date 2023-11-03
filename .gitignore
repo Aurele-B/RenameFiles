@@ -6,6 +6,9 @@
 !README.md
 !How_to_download_from_github.jpg
 !pyproject.toml
+!poetry.lock
 !/tests/
 !/src/
-!/src/core/
+!/src/RenameFiles/
+!/src/RenameFiles/__main__.py
+!/src/RenameFiles/core/

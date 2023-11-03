@@ -22,7 +22,7 @@ def run_rename_files():
 
     Redo 2. and 3. as many times as necessary
     """
-    from core.rename_files import RenameFilesWidget
+    from renamefiles.core.rename_files import RenameFilesWidget
     app = QtWidgets.QApplication([])
     session = RenameFilesWidget()
     session.show()

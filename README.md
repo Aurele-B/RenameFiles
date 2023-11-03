@@ -27,7 +27,7 @@ pip install Pyside6
 ```
 
 ## Usage
-To run the python application, open the __main.py (in an IDE) and run the function:
+To run the python application, open the __main__.py (in an IDE) and run the function:
 ```
 run_rename_files()
 ```
