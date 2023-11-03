@@ -2,9 +2,10 @@
 .idea/
 *
 !.gitignore
-!requirements.txt
 !LICENSE.odt
 !README.md
 !How_to_download_from_github.jpg
+!pyproject.toml
+!/tests/
 !/src/
 !/src/core/
