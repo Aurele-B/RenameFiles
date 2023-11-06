@@ -4,6 +4,9 @@
 !.gitignore
 !LICENSE.odt
 !README.md
+!README_TO_CREATE_A_USER_INTERFACE.md
+!README_TO_USE_AND_CREATE_PYTHON_PACKAGES_EASILY.md
+!README_TO_CREATE_AN_INSTALLABLE_EXECUTABLE.md
 !How_to_download_from_github.jpg
 !pyproject.toml
 !poetry.lock

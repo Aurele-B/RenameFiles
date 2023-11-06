@@ -10,7 +10,6 @@ import sys
 from pathlib import Path
 from PySide6 import QtWidgets
 
-
 def run_rename_files():
     """Entry point of rename files software.
     It uses the RenameFilesWidget, i.e. the main widget of the application.
