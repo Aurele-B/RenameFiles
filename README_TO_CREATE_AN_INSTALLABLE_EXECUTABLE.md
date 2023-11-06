@@ -12,9 +12,11 @@ Always use the exact same folder architecture as in the RenameFiles project, i.e
 ---__main__.py
 ---__init__.py
 ---core/
+----__init__.py
 ----any_file.py
 ----any_other_file.py
 ---any_other_folder/
+----__init__.py
 ----any_file.py
 ----any_other_file.py
 
@@ -52,7 +54,8 @@ from pathlib import Path
 CURR_DIR = Path(os.path.dirname(os.path.realpath(__file__)))
 renamefiles_DIR = CURR_DIR.parent#.parent # Add the ".parent" when creating a windows executable
 ```
-Contrary to all uses, creating an executable requires to add a .parent
+Contrary to all uses, creating an executable requires to add a .parent. 
+Remember to remove it after having created the executable to that all other uses still work.
 
 ## 1.5. Create the windows executable
 
