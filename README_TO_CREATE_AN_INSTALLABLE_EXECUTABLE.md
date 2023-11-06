@@ -1,4 +1,5 @@
-# How to create an executable for any python project and compress it into a setup file.
+How to create an executable for any python project and compress it into a setup file.
+=================
 The first part allows this on Windows, the second on Mac.
 
 # 1. Create a windows executable and setup file
@@ -43,7 +44,7 @@ poetry install
 cd C:/Directory/Scripts/Python/RenameFiles/src/RenameFiles
 ```
 
-### 1.4 If your project is complex and requires a python file containing paths to particular files
+## 1.4 If your project is complex and requires a python file containing paths to particular files
 This file (e.g. paths.py) should contain: 
 ```
 import os
@@ -75,7 +76,7 @@ pyinstaller __main__.spec
 ```
 
 ## 1.6. Create an installer
-### 1.6.1 Rename the dist folder (within src\RenameFiles) into RenameFiles
+### 1.6.1 Move and Rename the dist folder (within src\RenameFiles) into RenameFiles
 ### 1.6.2 Compress it into a .zip file.
 ### 1.6.3 Run the NSIS program (if not installed, download and install it)
 ### 1.6.4 Click on "Installer based on zip file "/open/RenameFiles.zip
