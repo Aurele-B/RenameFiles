@@ -9,7 +9,7 @@ import os
 from glob import glob
 import shutil
 from pathlib import Path
-from RenameFiles.core.custom_widgets import *
+from src.RenameFiles.core.custom_widgets import *
 
 
 class RenameFilesWidget(WindowType):
