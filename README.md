@@ -77,7 +77,7 @@ pip install Pyside6
 ```
 
 ### Usage
-To run the python application, run the function:
+To test the python application, run the function:
 ```
 run_rename_files()
 ```
