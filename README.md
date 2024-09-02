@@ -18,7 +18,7 @@ The src folder contains 3 .py files:
 3. core/rename_files.py
 
 ## Installation
-1. Install [Python](https://www.python.org/ftp/python/3.11.0/python-3.11.0-amd64.exe), an IDE (like [PyCharm](https://www.jetbrains.com/pycharm/download/?section=windows) or Spyder) and git[git](https://git-scm.com/downloads)
+1. Install [Python](https://www.python.org/ftp/python/3.11.0/python-3.11.0-amd64.exe), an IDE (like [PyCharm](https://www.jetbrains.com/pycharm/download/?section=windows) or Spyder) and [git](https://git-scm.com/downloads)
 
 3. Create a new project using "Get from Version Control..." or "Get from VCS"
 <img
@@ -32,11 +32,23 @@ The src folder contains 3 .py files:
 <img
   src="https://github.com/Aurele-B/RenameFiles/blob/main/Clone_directly.jpg"
   alt="Alt text"
-  title="Clone github repository)"
+  title="Clone github repository"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
 
 
-4. Create an environment in another folder (i.e. "Configure a python interpreter")
+4. Open the _ _ main _ _.py file
+<img
+  src="https://github.com/Aurele-B/RenameFiles/blob/main/Starting_point.jpg"
+  alt="Alt text"
+  title="Open the starting point of the software"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+5. Create an environment in another folder (i.e. "Configure a python interpreter")
+<img
+  src="https://github.com/Aurele-B/RenameFiles/blob/main/Create_environment.jpg"
+  alt="Alt text"
+  title="Create an environment (python interpreter)"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
 
 Note: you also can clone "manually" this repository by downloading its zip file:
 - Click: "Code" and "Download ZIP"
@@ -46,7 +58,7 @@ Note: you also can clone "manually" this repository by downloading its zip file:
   title="Watch were to click"
   style="display: inline-block; margin: 0 auto; max-width: 300px"> 
 
-- Extract this zip file and put the content of the sub-folder "RenameFiles-main/RenameFiles-main" in the newly created python project.
+- Extract this zip file and put the content of the sub-folder "RenameFiles-main/RenameFiles-main" in an existing python project.
 
 ### Package requirements
 To install the tool to create user interfaces, write in terminal:
