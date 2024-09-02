@@ -21,6 +21,7 @@ The src folder contains 3 .py files:
 1. Install [Python](https://www.python.org/ftp/python/3.11.0/python-3.11.0-amd64.exe), an IDE (like [PyCharm](https://www.jetbrains.com/pycharm/download/?section=windows) or Spyder) and [git](https://git-scm.com/downloads)
 
 3. Create a new project using "Get from Version Control..." or "Get from VCS"
+
 <img
   src="https://github.com/Aurele-B/RenameFiles/blob/main/Get_from_VCS.jpg"
   alt="Alt text"
@@ -29,6 +30,7 @@ The src folder contains 3 .py files:
 
 3. Paste this URL: https://github.com/Aurele-B/RenameFiles.git to clone the repository
    (At this point, setting up a poetry environment is facultative)
+
 <img
   src="https://github.com/Aurele-B/RenameFiles/blob/main/Clone_directly.jpg"
   alt="Alt text"
@@ -37,6 +39,7 @@ The src folder contains 3 .py files:
 
 
 4. Open the _ _ main _ _.py file
+
 <img
   src="https://github.com/Aurele-B/RenameFiles/blob/main/Starting_point.jpg"
   alt="Alt text"
@@ -44,6 +47,7 @@ The src folder contains 3 .py files:
   style="display: inline-block; margin: 0 auto; max-width: 300px">
 
 5. Create an environment in another folder (i.e. "Configure a python interpreter")
+
 <img
   src="https://github.com/Aurele-B/RenameFiles/blob/main/Configure_python_interpreter.jpg"
   alt="Alt text"
@@ -73,8 +77,11 @@ pip install Pyside6
 ```
 
 ### Usage
-To run the python application, open src/RenameFiles/__main__.py (in an IDE) and run the function:
+To run the python application, run the function:
 ```
 run_rename_files()
 ```
+In the opened file src/RenameFiles/_ _ main _ _.py
+
+### Learn
 Use one of the README files to learn what you need for your own project.
