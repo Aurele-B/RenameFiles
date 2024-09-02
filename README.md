@@ -22,7 +22,7 @@ The src folder contains 3 .py files:
 2. Create a new project using "Get from Version Control..." or "Get from VCS"
 3. Paste this URL: https://github.com/Aurele-B/RenameFiles.git to clone the repository
    (At this point, setting up a poetry environment is facultative)
-4. Create an environment in another folder (i.e. "Configure a python interpreter)
+4. Create an environment in another folder (i.e. "Configure a python interpreter")
 
 Note: you also can clone "manually" this repository by downloading its zip file:
 - Click: "Code" and "Download ZIP"
@@ -35,7 +35,7 @@ Note: you also can clone "manually" this repository by downloading its zip file:
 - Extract this zip file and put the content of the sub-folder "RenameFiles-main/RenameFiles-main" in the newly created python project.
 
 ### Package requirements
-To install Pyside6 package in the environment of the project, write in terminal:
+To install the tool to create user interfaces, write in terminal:
 ```
 pip install Pyside6
 ```
