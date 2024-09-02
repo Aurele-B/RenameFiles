@@ -45,6 +45,12 @@ The src folder contains 3 .py files:
 
 5. Create an environment in another folder (i.e. "Configure a python interpreter")
 <img
+  src="https://github.com/Aurele-B/RenameFiles/blob/main/Configure_python_interpreter.jpg"
+  alt="Alt text"
+  title="Configure python interpreter"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+<img
   src="https://github.com/Aurele-B/RenameFiles/blob/main/Create_environment.jpg"
   alt="Alt text"
   title="Create an environment or python interpreter"
