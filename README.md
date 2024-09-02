@@ -17,24 +17,31 @@ The src folder contains 3 .py files:
 2. core/custom_widgets.py
 3. core/rename_files.py
 
-To download this content, use Code and Download ZIP:
+## Installation
+1. Create a new project and environment using an IDE (like PyCharm or Spyder)
+
+### Download
+Using an IDE (like PyCharm or Spyder):
+
+2. click: "Code" and "Download ZIP"
 <img
   src="https://github.com/Aurele-B/RenameFiles/blob/main/How_to_download_from_github.jpg"
   alt="Alt text"
   title="Watch were to click"
-  style="display: inline-block; margin: 0 auto; max-width: 300px">
+  style="display: inline-block; margin: 0 auto; max-width: 300px"> 
 
-To create your first GUI, put these in a new python project and install the required package (next section).
+3. Extract this zip file and put the content of the sub-folder "RenameFiles-main/RenameFiles-main" in the newly created python project.
 
-## Package requirements
-This application requires to install the Pyside6 package in the environment of your python project:
+### Package requirements
+4. Install Pyside6 package in the environment of the project
+Write in terminal:
 ```
 pip install Pyside6
 ```
 
-## Usage
-To run the python application, open the __main__.py (in an IDE) and run the function:
+### Usage
+5. To run the python application, open src/RenameFiles/__main__.py (in an IDE) and run the function:
 ```
 run_rename_files()
 ```
-Download or clone this project and use one of the README files to learn what you need for your own project.
+Use one of the README files to learn what you need for your own project.
