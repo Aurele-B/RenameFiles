@@ -47,7 +47,7 @@ The src folder contains 3 .py files:
 <img
   src="https://github.com/Aurele-B/RenameFiles/blob/main/Create_environment.jpg"
   alt="Alt text"
-  title="Create an environment (python interpreter)"
+  title="Create an environment or python interpreter"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
 
 Note: you also can clone "manually" this repository by downloading its zip file:
