@@ -18,29 +18,30 @@ The src folder contains 3 .py files:
 3. core/rename_files.py
 
 ## Installation
-1. Create a new project and environment using an IDE (like PyCharm or Spyder)
+1. Open an IDE (like PyCharm or Spyder)
+2. Create a new project using "Get from Version Control..." or "Get from VCS"
+3. Paste this URL: https://github.com/Aurele-B/RenameFiles.git to clone the repository
+   (At this point, setting up a poetry environment is facultative)
+4. Create an environment in another folder (i.e. "Configure a python interpreter)
 
-### Download
-Using an IDE (like PyCharm or Spyder):
-
-2. click: "Code" and "Download ZIP"
+Note: you also can clone "manually" this repository by downloading its zip file:
+- Click: "Code" and "Download ZIP"
 <img
   src="https://github.com/Aurele-B/RenameFiles/blob/main/How_to_download_from_github.jpg"
   alt="Alt text"
   title="Watch were to click"
   style="display: inline-block; margin: 0 auto; max-width: 300px"> 
 
-3. Extract this zip file and put the content of the sub-folder "RenameFiles-main/RenameFiles-main" in the newly created python project.
+- Extract this zip file and put the content of the sub-folder "RenameFiles-main/RenameFiles-main" in the newly created python project.
 
 ### Package requirements
-4. Install Pyside6 package in the environment of the project
-Write in terminal:
+To install Pyside6 package in the environment of the project, write in terminal:
 ```
 pip install Pyside6
 ```
 
 ### Usage
-5. To run the python application, open src/RenameFiles/__main__.py (in an IDE) and run the function:
+To run the python application, open src/RenameFiles/__main__.py (in an IDE) and run the function:
 ```
 run_rename_files()
 ```
