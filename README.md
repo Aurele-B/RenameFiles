@@ -26,14 +26,15 @@ The src folder contains 3 .py files:
   alt="Alt text"
   title="Create project from VCS (github)"
   style="display: inline-block; margin: 0 auto; max-width: 300px"> 
+
+3. Paste this URL: https://github.com/Aurele-B/RenameFiles.git to clone the repository
+   (At this point, setting up a poetry environment is facultative)
 <img
   src="https://github.com/Aurele-B/RenameFiles/blob/main/Clone_directly.jpg"
   alt="Alt text"
   title="Clone github repository)"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
 
-3. Paste this URL: https://github.com/Aurele-B/RenameFiles.git to clone the repository
-   (At this point, setting up a poetry environment is facultative)
 
 4. Create an environment in another folder (i.e. "Configure a python interpreter")
 
