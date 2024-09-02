@@ -18,7 +18,7 @@ The src folder contains 3 .py files:
 3. core/rename_files.py
 
 ## Installation
-1. Install [Python](https://www.python.org/ftp/python/3.11.0/python-3.11.0-amd64.exe), an IDE (like [PyCharm](https://www.jetbrains.com/pycharm/download/?section=windows) or Spyder) and [git](https://git-scm.com/downloads)
+1. Install [Python](https://www.python.org/ftp/python/3.11.0/python-3.11.0-amd64.exe), an IDE (like [PyCharm](https://www.jetbrains.com/pycharm/download/?section=windows)) and [git](https://git-scm.com/downloads)
 
 3. Create a new project using "Get from Version Control..." or "Get from VCS"
 
@@ -60,15 +60,17 @@ The src folder contains 3 .py files:
   title="Create an environment or python interpreter"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
 
-Note: you also can clone "manually" this repository by downloading its zip file:
-- Click: "Code" and "Download ZIP"
-<img
-  src="https://github.com/Aurele-B/RenameFiles/blob/main/How_to_download_from_github.jpg"
-  alt="Alt text"
-  title="Watch were to click"
-  style="display: inline-block; margin: 0 auto; max-width: 300px"> 
+If you succeded the previous steps, you can go directly to Package requirements.
 
-- Extract this zip file and put the content of the sub-folder "RenameFiles-main/RenameFiles-main" in an existing python project.
+> Other option: you can also clone "manually" this repository by downloading its zip file:
+>- Click: "Code" and "Download ZIP"
+><img
+>  src="https://github.com/Aurele-B/RenameFiles/blob/main/How_to_download_from_github.jpg"
+>  alt="Alt text"
+>  title="Watch were to click"
+>  style="display: inline-block; margin: 0 auto; max-width: 300px"> 
+>
+>- Extract this zip file and put the content of the sub-folder "RenameFiles-main/RenameFiles-main" in an existing python project.
 
 ### Package requirements
 To install the tool to create user interfaces, write in terminal:
