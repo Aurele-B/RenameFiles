@@ -13,15 +13,28 @@ Note: each of these skills have a corresponding README file allowing you to lear
 
 ## Content
 The src folder contains 3 .py files:
-1. __main.py
+1. _ _ main _ _.py
 2. core/custom_widgets.py
 3. core/rename_files.py
 
 ## Installation
-1. Open an IDE (like PyCharm or Spyder)
-2. Create a new project using "Get from Version Control..." or "Get from VCS"
+1. Install [Python](https://www.python.org/ftp/python/3.11.0/python-3.11.0-amd64.exe), an IDE (like [PyCharm](https://www.jetbrains.com/pycharm/download/?section=windows) or Spyder) and git[git](https://git-scm.com/downloads)
+
+3. Create a new project using "Get from Version Control..." or "Get from VCS"
+<img
+  src="https://github.com/Aurele-B/RenameFiles/blob/main/Get_from_VCS.jpg"
+  alt="Alt text"
+  title="Create project from VCS (github)"
+  style="display: inline-block; margin: 0 auto; max-width: 300px"> 
+<img
+  src="https://github.com/Aurele-B/RenameFiles/blob/main/Clone_directly.jpg"
+  alt="Alt text"
+  title="Clone github repository)"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
 3. Paste this URL: https://github.com/Aurele-B/RenameFiles.git to clone the repository
    (At this point, setting up a poetry environment is facultative)
+
 4. Create an environment in another folder (i.e. "Configure a python interpreter")
 
 Note: you also can clone "manually" this repository by downloading its zip file:
