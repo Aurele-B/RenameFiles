@@ -1,28 +1,28 @@
-[tool.poetry]
-name = "RenameFiles"
-version = "1.0.0"
-description = "Renames files and optionaly moves them from one place to another."
-authors = ["Aurèle Boussard"]
-license = "GNU General Public License v3.0"
+[project]
+name = "renamefiles"
+version = "0.1.0"
+description = "is a learning support for 3 python skills"
+authors = [
+    {name = "Aurele-B",email = "aurele.boussard@gmail.com"}
+]
+license = {text = "GNU3"}
 readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "pyside6 (>=6.9.0,<7.0.0)",
+    "pyinstaller (>=6.13.0,<7.0.0)",
+    "setuptools (>=80.7.1,<81.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+h5py = "^3.13.0"
+typing-extensions = "^4.13.2"
+wheel = "^0.45.1"
 
 [tool.poetry.scripts]
 RenameFiles = "renamefiles.__main__:run_rename_files"
-
-[tool.poetry.dependencies]
-python = ">3.8,<3.13"
-PySide6 = "^6.5.2"
-pyinstaller = "^6.1.0"
-setuptools = ">=70.0.0"
-
-[tool.poetry.group.dev.dependencies]
-h5py = "^3.10.0"
-typing-extensions = "^4.8.0"
-wheel = "^0.41.3"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
-[project.urls]
-"Homepage" = "https://github.com/Aurele-B/RenameFiles"
